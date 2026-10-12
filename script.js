@@ -172,13 +172,19 @@ cart[t]={q:(cart[t]?cart[t].q:0)+q,k:c.dataset.k};save();render();c.querySelecto
 const cb=$('cb');cb.classList.remove('bump');void cb.offsetWidth;cb.classList.add('bump');toast('✓ '+q+' × '+t+' added to quote list')}
 const r=e.target.closest('.rm');if(r){delete cart[r.closest('.it').dataset.t];save();render()}});
 document.addEventListener('change',e=>{if(e.target.classList.contains('qi')){e.target.value=clamp(e.target.value);const it=e.target.closest('.it');if(it){cart[it.dataset.t].q=+e.target.value;save();render()}}});
-$('po').onclick=()=>{const ks=Object.keys(cart);
-if(!ks.length){toast('Quote list is empty');return}
-const n=$('cn').value.trim(),p=$('cp').value.trim();if(!n||!p){toast('Please enter name and phone');(n?$('cp'):$('cn')).focus();return}
-const t='*Quotation Request - Edge Biogene*\nName: '+n+'\nPhone: '+p+'\nAddress: '+($('ca').value.trim()||'-')+'\n\n*Items:*\n'+ks.map((k,i)=>(i+1)+'. '+k+'  x '+cart[k].q).join('\n')+'\n\nTotal items: '+tot()+'\nPlease share wholesale price, availability and lead time.';
+$('po').onclick=()=>{
+const ks=Object.keys(cart);
+const n=$('cn').value.trim(),p=$('qph').value.trim(),em=$('qem').value.trim(),city=$('qct').value.trim(),addr=$('ca').value.trim(),req=$('qreq').value.trim();
+if(!n){toast('Please enter your name / hospital / lab');$('cn').focus();return}
+if(!p){toast('Please enter your phone number');$('qph').focus();return}
+if(!/^[+()\d\s.-]{7,20}$/.test(p)||p.replace(/\D/g,'').length<7){toast('Please enter a valid phone number');$('qph').focus();return}
+if(!ks.length&&!req){toast('Add products to the list or describe your requirement');$('qreq').focus();return}
+let items=ks.length?'\n\n*Items from Quote List:*\n'+ks.map((k,i)=>(i+1)+'. '+k+' x '+cart[k].q).join('\n'):'';
+const t='*Quotation Request - Edge Biogene*\nName / Hospital / Lab: '+n+'\nPhone: '+p+'\nEmail: '+(em||'-')+'\nShipping city / PIN: '+(city||'-')+'\nDelivery address: '+(addr||'-')+(req?'\n\n*Additional requirement:*\n'+req:'')+items+'\n\nTotal quantity of listed items: '+tot()+'\nPlease share wholesale price, availability and lead time.';
 const w=$('cw');w.href='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
 $('cm').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+n)+'&body='+encodeURIComponent(t);
-$('cs').style.display='block';w.click()};
+$('cs').style.display='block';w.click();
+};
 render();
 })();
 
