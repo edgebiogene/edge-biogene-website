@@ -253,9 +253,14 @@
 <aside id="cd" aria-label="Quote list"><div class="ch"><h3>📋 Your Quote List</h3><button id="cx" aria-label="Close">✕</button></div>
 <div id="ci"></div>
 <div class="cf"><div class="tot"><span>Total items</span><span id="tt">0</span></div>
-<input id="cn" placeholder="Your name / Hospital / Lab name"><input id="cp" placeholder="Phone number" inputmode="tel"><textarea id="ca" rows="2" placeholder="Delivery address"></textarea>
-<button class="btn" id="po">Send Quote Request on WhatsApp</button>
-<div id="cs">✅ Request ready! Agar WhatsApp apne aap na khule to niche dabaye:<br><a id="cw" class="btn" href="#" target="_blank" rel="noopener">Open WhatsApp</a><a id="cm" class="btn o" href="#">Send via Email</a></div>
+<input id="cn" placeholder="Your name / Hospital / Lab name *" required autocomplete="name">
+<input id="qph" placeholder="Phone number *" inputmode="tel" required autocomplete="tel">
+<input id="qem" type="email" placeholder="Email (optional)" autocomplete="email">
+<input id="qct" placeholder="Shipping city / PIN" autocomplete="postal-code">
+<textarea id="ca" rows="2" placeholder="Delivery address"></textarea>
+<textarea id="qreq" rows="3" placeholder="Additional product / brand / model / quantity / specifications (if not already added above)"></textarea>
+<button class="btn" id="po" type="button">Send Quote Request on WhatsApp</button>
+<div id="cs">✅ Your request is ready. If WhatsApp does not open automatically, use one of these options:<br><a id="cw" class="btn" href="#" target="_blank" rel="noopener">Open WhatsApp</a><a id="cm" class="btn o" href="#">Send via Email</a></div>
 <button class="btn o" id="cl" style="padding:9px">Clear List</button></div></aside><div id="ts"></div><script src="script.js"></script>
 </body>
 </html>
