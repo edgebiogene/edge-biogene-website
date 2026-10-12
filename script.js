@@ -59,7 +59,7 @@ const IMG={
  "malaria": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
  "tropi": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
  "tropt": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "fist": "images/fist.svg",
+ "fist": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
  "cat-equipment": "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280547.jpg&fm=jpg",
  "cat-diagnostic": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
  "cat-hospital": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
