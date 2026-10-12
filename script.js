@@ -9,13 +9,16 @@ document.getElementById('tabs').onclick=e=>{const f=e.target.dataset.f;if(!f)ret
 pr.onclick=e=>{const q=e.target.dataset.q;if(q){const m=document.getElementById('m');m.value=(m.value?m.value+'\n':'')+'• '+q+' – Qty: '}};
 document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();
 const g=id=>document.getElementById(id).value.trim();
+const ty=(document.querySelector('#types .ty.on')||{dataset:{v:''}}).dataset.v;
 let ci='';try{const c=JSON.parse(localStorage.getItem('eb_cart')||'{}'),k=Object.keys(c);if(k.length)ci='\n\nQuote list:\n'+k.map((x,i)=>(i+1)+'. '+x+' x '+c[x].q).join('\n')}catch(x){}
-const t='*Request for Quotation - Edge Biogene*\nName: '+g('n')+'\nCompany: '+(g('company')||'-')+'\nPhone: '+g('ph')+'\nEmail: '+(g('em')||'-')+'\nCity/PIN: '+(g('ct')||'-')+'\nRequirement:\n'+g('m')+ci;
+const t='*Request for Quotation - Edge Biogene*\nEnquiry type: '+ty+'\nName: '+g('n')+'\nCompany: '+(g('fco')||'-')+'\nPhone: '+g('ph')+'\nEmail: '+(g('em')||'-')+'\nCity/PIN: '+(g('ct')||'-')+'\nRequirement:\n'+g('m')+ci;
 const u='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
 const wl=document.getElementById('wl');wl.href=u;
 document.getElementById('ml').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+g('n'))+'&body='+encodeURIComponent(t);
-document.getElementById('st').style.display='block';
+document.getElementById('st').classList.add('on');
 wl.click();});
+document.getElementById('types').addEventListener('click',e=>{const b=e.target.closest('.ty');if(!b)return;document.querySelectorAll('#types .ty').forEach(x=>x.classList.toggle('on',x===b))});
+function updFq(){const e=document.getElementById('fq');if(!e)return;let n=0;try{const c=JSON.parse(localStorage.getItem('eb_cart')||'{}');n=Object.keys(c).length}catch(x){}e.textContent=n?'📋 '+n+' item'+(n>1?'s':'')+' from your quote list will be included in this request.':'';e.style.display=n?'block':'none'}
 // hero search -> products page
 (function(){const go=()=>{const v=document.getElementById('hq').value;location.hash='#/products';setTimeout(()=>{const q=document.getElementById('q');q.value=v;q.dispatchEvent(new Event('input'))},60)};document.getElementById('hb').onclick=go;document.getElementById('hq').onkeydown=e=>{if(e.key==='Enter')go()}})();
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
@@ -30,42 +33,35 @@ rs();addEventListener('resize',rs);
 
 
 const IMG={
- "swab": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "syr": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
- "ins": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
- "ndl": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
- "edta": "https://images.pexels.com/photos/6627696/pexels-photo-6627696.jpeg?auto=compress&cs=tinysrgb&w=900",
- "urn": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
- "petri": "https://images.pexels.com/photos/10187649/pexels-photo-10187649.jpeg?auto=compress&cs=tinysrgb&w=900",
- "tt": "https://images.pexels.com/photos/8392573/pexels-photo-8392573.jpeg?auto=compress&cs=tinysrgb&w=900",
- "fp": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
- "esr": "https://images.pexels.com/photos/8442557/pexels-photo-8442557.jpeg?auto=compress&cs=tinysrgb&w=900",
- "nit": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900",
- "lat": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900",
- "bnd": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "strip": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
- "sharps": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "slides": "https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900",
- "pipette": "https://images.pexels.com/photos/8392541/pexels-photo-8392541.jpeg?auto=compress&cs=tinysrgb&w=900",
- "clot": "https://images.pexels.com/photos/6627696/pexels-photo-6627696.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cotton1": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cotton2": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "fist": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cuvette": "https://images.pexels.com/photos/8392573/pexels-photo-8392573.jpeg?auto=compress&cs=tinysrgb&w=900",
- "entero": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
- "aspen": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
- "hepa": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
- "trust": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
- "malaria": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
- "tropi": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
- "tropt": "https://images.pexels.com/photos/8442557/pexels-photo-8442557.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-equipment": "https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-diagnostic": "https://images.pexels.com/photos/34642915/pexels-photo-34642915.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-hospital": "https://images.pexels.com/photos/13697729/pexels-photo-13697729.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-consumables": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-reagents": "https://cardiff.imgix.net/__data/assets/image/0019/31096/Chemistry-lab-bottles.jpg?auto=format&fit=crop&h=700&q=75&w=1000",
- "cat-test-kits": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-hospital-consumables": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900"
+ "swab": "images/swab.jpg",
+ "syr": "images/syr.jpg",
+ "ins": "images/ins.jpg",
+ "ndl": "images/ndl.jpg",
+ "edta": "images/edta.jpg",
+ "urn": "images/urn.jpg",
+ "petri": "images/petri.jpg",
+ "tt": "images/tt.jpg",
+ "fp": "images/fp.jpg",
+ "esr": "images/esr.jpg",
+ "nit": "images/nit.jpg",
+ "lat": "images/lat.jpg",
+ "bnd": "images/bnd.jpg",
+ "strip": "images/strip.jpg",
+ "sharps": "images/sharps.jpg",
+ "slides": "images/slides.jpg",
+ "pipette": "images/pipette.jpg",
+ "clot": "images/clot.jpg",
+ "cotton1": "images/cotton1.jpg",
+ "cotton2": "images/cotton2.jpg",
+ "fist": "images/fist.jpg",
+ "cuvette": "images/cuvette.jpg",
+ "entero": "images/entero.jpg",
+ "aspen": "images/aspen.jpg",
+ "hepa": "images/hepa.jpg",
+ "trust": "images/trust.jpg",
+ "malaria": "images/malaria.jpg",
+ "tropi": "images/tropi.jpg",
+ "tropt": "images/tropt.jpg"
 };
 const PR=[["Plain Blood Tube 4 ml (Clot Activator)", "blood", "Red-top vacuum tube for serum and biochemistry tests.", "clot"], ["Disposable Syringe 3 ml / 5 ml", "blood", "Single-use sterile syringes (3 ml, 5 ml), EO sterilised.", "syr"], ["Insulin Syringe 1 ml (40 IU)", "blood", "Fine-needle insulin syringes with clear graduation.", "ins"], ["Vacuum Blood Collection Needle", "blood", "Multi-sample venous blood collection needles.", "ndl"], ["EDTA Blood Collection Tubes (K2 EDTA)", "blood", "Lavender-top vacuum tubes for haematology tests.", "edta"], ["Microscope Glass Slides", "lab", "Imported ground-edge glass slides, box pack.", "slides"], ["Plastic Pipette 1 ml", "lab", "Graduated disposable transfer pipettes for lab use.", "pipette"], ["Sterile Urine / Sample Container", "lab", "Sterile screw-cap containers in 30 ml and 50 ml.", "urn"], ["Petri Dish", "lab", "Clear glass petri dishes with lid for culture work.", "petri"], ["Glass Test Tube", "lab", "Round-bottom borosilicate glass test tubes.", "tt"], ["Filter Paper", "lab", "Laboratory filter paper circles for filtration.", "fp"], ["ESR / Graduated Glass Tubes", "lab", "Graduated borosilicate glass tubes for ESR and lab measurement.", "esr"], ["Sterilized Swab Stick", "lab", "Sterile swab sticks in tube for sample collection.", "swab"], ["Hemoglobin Cuvettes (DiaSpect)", "test", "Germany-made cuvettes for DiaSpect haemoglobin analyser.", "cuvette"], ["Enterocheck-WB (Typhoid IgM)", "test", "Rapid test for S. typhi IgM antibodies in serum, plasma or whole blood.", "entero"], ["Aspen Rapid Immunoassay Test", "test", "Rapid screening test cards, single-use.", "aspen"], ["Hepacard \u2013 HBsAg Test", "test", "Hepatitis B surface antigen rapid test, sensitivity 0.5 ng/ml.", "hepa"], ["Trustline Rapid Tests", "test", "Range of rapid diagnostic tests by Athenese-Dx.", "trust"], ["Malaria Pf/Pv Antigen Rapid Test", "test", "Trustline rapid test for detecting P. falciparum / P. vivax.", "malaria"], ["Troponin-I Rapid Test (Oscar)", "test", "Qualitative cardiac Troponin-I test, 10 tests per box.", "tropi"], ["Troponin T Sensitive (Roche cobas)", "test", "Roche cobas Troponin T sensitive reagent pack.", "tropt"], ["10 Parameter Urine Strips", "test", "Urinalysis reagent strips with colour chart bottle.", "strip"], ["Sharps Waste Container", "care", "Puncture-proof biomedical sharps disposal box with secure lid.", "sharps"], ["Absorbent Cotton Wool I.P. 500 g", "care", "Premium absorbent cotton roll, hospital and lab grade.", "cotton1"], ["Absorbent Cotton Wool I.P./B.P. 500 g", "care", "100% pure white, hydrogen peroxide bleached cotton rolls.", "fist"], ["Absorbent Cotton \u2013 Bulk Pack", "care", "Bulk 500 g cotton bags for wholesale supply.", "cotton2"], ["Nitrile Gloves, Powder Free (M / L)", "care", "Blue disposable nitrile examination gloves, latex free.", "nit"], ["Latex Examination Gloves", "care", "Single-use latex examination gloves for hospital and lab.", "lat"], ["Adhesive Spot Bandage (Medicated Dressings)", "care", "Round medicated spot dressings, 100 pcs per box.", "bnd"]],NI=[];
 const CT=["syr", "ins", "ndl", "edta", "urn", "petri", "tt", "fp", "esr", "nit", "lat", "bnd", "strip", "swab"];
@@ -83,13 +79,13 @@ lb.onclick=()=>lb.classList.remove('on');
 /* ===== CATEGORY PAGES ===== */
 const DEF='Available on enquiry. Brand, model and specification as per your requirement.';
 const CATS2=[
-['lab-equipment','Laboratory Equipment','🔬','Microscopes, centrifuges, incubators, sterilisation and measuring equipment for laboratories.','https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900'],
-['analyzers','Analyzers & Machines','⚙️','Hematology, biochemistry, electrolyte, coagulation, immunoassay analyzers and other diagnostic machines.','https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG'],
-['hospital-equipment','Hospital Equipment','🏥','Patient monitoring, emergency, respiratory and general hospital equipment and furniture.','https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900'],
-['reagents','Reagents & Chemicals','🧴','Biochemistry, hematology and serology reagents, stains, culture media, calibrators and controls.','https://cardiff.imgix.net/__data/assets/image/0019/31096/Chemistry-lab-bottles.jpg?auto=format&fit=crop&h=700&q=75&w=1000'],
-['test-kits','Diagnostic Test Kits','🧪','Rapid test kits and cardiac markers from leading brands.','https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900'],
-['lab-consumables','Lab Consumables & Plasticware','🧫','Blood collection, sample containers, plasticware and glassware for everyday lab work.','https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900'],
-['hospital-consumables','Hospital Consumables','🧤','Gloves, cotton, dressings, catheters, IV products and protective supplies.','https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900']];
+['lab-equipment','Laboratory Equipment','🔬','Microscopes, centrifuges, incubators, sterilisation and measuring equipment for laboratories.','cat-equipment.jpg'],
+['analyzers','Analyzers & Machines','⚙️','Hematology, biochemistry, electrolyte, coagulation, immunoassay analyzers and other diagnostic machines.','cat-diagnostic.jpg'],
+['hospital-equipment','Hospital Equipment','🏥','Patient monitoring, emergency, respiratory and general hospital equipment and furniture.','cat-hospital.jpg'],
+['reagents','Reagents & Chemicals','🧴','Biochemistry, hematology and serology reagents, stains, culture media, calibrators and controls.',''],
+['test-kits','Diagnostic Test Kits','🧪','Rapid test kits and cardiac markers from leading brands.',''],
+['lab-consumables','Lab Consumables & Plasticware','🧫','Blood collection, sample containers, plasticware and glassware for everyday lab work.','cat-consumables.jpg'],
+['hospital-consumables','Hospital Consumables','🧤','Gloves, cotton, dressings, catheters, IV products and protective supplies.','']];
 const X={
 'lab-equipment':'Binocular Compound Microscope;Trinocular Microscope (camera port);Table-Top Centrifuge;Refrigerated Centrifuge;Laboratory Incubator;Hot Air Oven;Vertical Autoclave;Horizontal Autoclave;Water Bath;Analytical Balance;pH Meter;Colorimeter / Spectrophotometer;Vortex Mixer;Magnetic Stirrer with Hot Plate;Laminar Air Flow Cabinet;Biosafety Cabinet;Laboratory Refrigerator;Deep Freezer (-20 °C / -40 °C);Micropipettes (Single / Multichannel);Rotator / Shaker',
 'analyzers':'5-Part Hematology Analyzer;3-Part Hematology Analyzer (Cell Counter);Semi-Auto Biochemistry Analyzer;Fully Auto Biochemistry Analyzer;Electrolyte Analyzer (Na / K / Cl);Coagulation Analyzer (PT / aPTT);ELISA Reader;ELISA Plate Washer;Urine Analyzer (Strip Reader);ESR Analyzer;Blood Gas Analyzer;HbA1c Analyzer;Immunoassay Analyzer (CLIA / FIA);Hemoglobin Meter;Glucometer;Real-Time PCR System;Cardiac Marker Reader (Point of Care)',
@@ -99,41 +95,11 @@ const X={
 'lab-consumables':'Pipette Tips (10 / 200 / 1000 µl);Micro Centrifuge Tubes (1.5 / 2 ml);Centrifuge Tubes (15 / 50 ml);Cryovials;Cover Slips;Test Tube Racks;Slide Storage Boxes;Staining Jars;Wash Bottles;Measuring Cylinders & Beakers;Reagent Bottles;Droppers;Culture Tubes',
 'hospital-consumables':'IV Cannula;IV Infusion Set;Foley Catheter;Urine Collection Bag;Surgical Face Mask;N95 Respirator;Disposable Gown / PPE Kit;Surgical Gloves (Sterile);Cotton Gauze & Swabs;Crepe Bandage;Surgical Blades;Disposable Cap & Shoe Cover;Micropore Tape;Oxygen Mask;Nebulizer Mask;ECG Electrodes'};
 const FROM={'test-kits':['test'],'lab-consumables':['lab','blood'],'hospital-consumables':['care']};
-
-function imageForProduct(n, category){
- const t=n.toLowerCase();
- if(/microscope/.test(t)) return IMG['cat-equipment'];
- if(/centrifuge/.test(t)) return 'https://images.pexels.com/photos/8442029/pexels-photo-8442029.jpeg?auto=compress&cs=tinysrgb&w=900';
- if(/hematology|cell counter/.test(t)) return 'https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG';
- if(/blood gas|hba1c|hemoglobin meter|electrolyte analyzer/.test(t)) return 'https://www.teikyo-mizonokuchi.jp/gaiyo/labo/img/09991_02.jpg';
- if(/biochemistry analyzer|semi-auto|fully auto|coagulation analyzer|immunoassay analyzer|elisa reader|elisa plate washer|urine analyzer|esr analyzer|analyzer/.test(t)) return 'https://images.pexels.com/photos/34642915/pexels-photo-34642915.jpeg?auto=compress&cs=tinysrgb&w=900';
- if(/pcr|hplc|biosafety cabinet|laminar air flow|incubator|autoclave|hot air oven|water bath|spectrophotometer|colorimeter|vortex|magnetic stirrer|balance|ph meter|deep freezer|laboratory refrigerator/.test(t)) return 'https://images.pexels.com/photos/3735732/pexels-photo-3735732.jpeg?auto=compress&cs=tinysrgb&w=900';
- if(/reagent|stain|culture media|calibrator|control|antisera|antigen|chemical|diluent|lyse|cleaner|buffer|solution/.test(t)) return IMG['cat-reagents'];
- if(/rapid test|test kit|test card|dengue|pregnancy|hcg|h\. pylori|chikungunya|crp rapid|malaria|troponin|hepacard|enterocheck|trustline|aspen/.test(t)) return IMG['cat-test-kits'];
- if(/syringe|needle|insulin/.test(t)) return IMG['syr'];
- if(/glove|nitrile|latex/.test(t)) return IMG['nit'];
- if(/cotton|bandage|gauze|sharps|catheter|mask|ppe|gown|iv cannula|infusion set|urine collection bag|face mask|shoe cover|oxygen mask|nebulizer mask|ecg electrode/.test(t)) return IMG['cat-hospital-consumables'];
- if(/blood collection|edta|clot activator|blood tube|vacuum tube|blood sample|vacutainer|esr tube/.test(t)) return IMG['edta'];
- if(/petri|culture dish/.test(t)) return IMG['petri'];
- if(/pipette|pipette tip|dropper|micropipette/.test(t)) return IMG['pipette'];
- if(/test tube|glassware|beaker|flask|slide|cover slip|tube rack|cryovial|centrifuge tube|reagent bottle|measuring cylinder|staining jar|wash bottle/.test(t)) return IMG['tt'];
- if(/urine|sample container|specimen container/.test(t)) return IMG['urn'];
- if(/hospital bed|stretcher|wheelchair|examination couch|operating table|instrument trolley|patient monitor|ecg machine|defibrillator|ventilator|infusion pump|syringe pump|oxygen concentrator|pulse oximeter|nebulizer|suction machine|blood pressure|fetal doppler|thermometer|phototherapy|infant warmer/.test(t)) return IMG['cat-hospital'];
- if(category==='analyzers') return IMG['cat-diagnostic'];
- if(category==='reagents') return IMG['cat-reagents'];
- if(category==='test-kits') return IMG['cat-test-kits'];
- if(category==='hospital-consumables') return IMG['cat-hospital-consumables'];
- if(category==='lab-consumables') return IMG['cat-consumables'];
- if(category==='hospital-equipment') return IMG['cat-hospital'];
- return IMG['cat-equipment'];
-}
-
 const cnav=a=>CATS2.map(c=>'<a class="tab'+(c[0]===a?' on':'')+'" href="#/c/'+c[0]+'">'+c[2]+' '+c[1]+'</a>').join('');
-const CATIMG={'Laboratory Equipment':'cat-equipment','Analyzers & Machines':'cat-diagnostic','Hospital Equipment':'cat-hospital','Reagents & Chemicals':'cat-reagents','Diagnostic Test Kits':'cat-test-kits','Lab Consumables & Plasticware':'cat-consumables','Hospital Consumables':'cat-hospital-consumables'};
-const ccard=(t,d,k,e,l)=>{const src=k?IMG[k]:IMG[CATIMG[l]];return `<div class="pc" data-k="${k||''}" data-t="${t.toLowerCase()}"><div class="im ${CT.includes(k)?'ct':''}"><img loading="lazy" alt="${t}" src="${src}" onerror="this.style.display='none'"></div><div class="bd"><small>${l}</small><h3>${t}</h3><p>${d}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`};
+const ccard=(t,d,k,e,l)=>`<div class="pc" data-k="${k||''}" data-t="${t.toLowerCase()}"><div class="im ${k?'':'ph'} ${CT.includes(k)?'ct':''}">${k?'<img loading="lazy" alt="'+t+'" src="'+IMG[k]+'">':e}</div><div class="bd"><small>${l}</small><h3>${t}</h3><p>${d}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`;
 function showCat(sl){const C=CATS2.find(x=>x[0]===sl)||CATS2[0];
-const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,imageForProduct(n,C[0]),C[2],C[1])));
-const bg=C[4]?'url('+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
+const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,null,C[2],C[1])));
+const bg=C[4]?'url(images/'+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
 document.getElementById('cpc').innerHTML=`<div class="cban" style="background:linear-gradient(90deg,rgba(5,15,50,.85),rgba(5,15,50,.2)),${bg}"><div><h2>${C[2]} ${C[1]}</h2><p>${C[3]}</p><span class="cn">${it.length} products</span></div></div><div class="tabs">${cnav(C[0])}<a class="tab" href="#/products">All Products</a></div><div class="pbar"><input id="cq" placeholder="🔍 Search in ${C[1]}..."></div><div class="pg" id="cpg">${it.join('')}</div><p class="more">Can't find your brand or model? <a class="btn" href="#contact">Request Custom Sourcing</a></p>`;
 const g=document.getElementById('cpg');
 document.getElementById('cq').oninput=e=>{const q=e.target.value.toLowerCase();g.querySelectorAll('.pc').forEach(x=>x.classList.toggle('hide',!x.dataset.t.includes(q)))};
@@ -146,7 +112,8 @@ let k=c?'cat':pp?'products':h.replace('#','');if(!TT[k]&&k!=='cat')k='home';
 document.querySelectorAll('section[data-p]').forEach(x=>{x.hidden=x.dataset.p.split(' ').indexOf(k)<0});
 document.querySelectorAll('nav ul a').forEach(a=>{const t=a.getAttribute('href');a.classList.toggle('on',t==='#'+k||(t==='#/products'&&(pp||c)))});
 if(c)showCat(h.slice(4));else document.title=TT[k];
-document.body.classList.remove('pt');void document.body.offsetWidth;document.body.classList.add('pt');scrollTo({top:0,behavior:'instant'})}
+document.body.classList.remove('pt');void document.body.offsetWidth;document.body.classList.add('pt');scrollTo({top:0,behavior:'instant'});if(k==='contact')updFq()}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a&&a.getAttribute('href')===(location.hash||'#home')){e.preventDefault();route()}});
 addEventListener('hashchange',route);route();
 
 
@@ -172,19 +139,13 @@ cart[t]={q:(cart[t]?cart[t].q:0)+q,k:c.dataset.k};save();render();c.querySelecto
 const cb=$('cb');cb.classList.remove('bump');void cb.offsetWidth;cb.classList.add('bump');toast('✓ '+q+' × '+t+' added to quote list')}
 const r=e.target.closest('.rm');if(r){delete cart[r.closest('.it').dataset.t];save();render()}});
 document.addEventListener('change',e=>{if(e.target.classList.contains('qi')){e.target.value=clamp(e.target.value);const it=e.target.closest('.it');if(it){cart[it.dataset.t].q=+e.target.value;save();render()}}});
-$('po').onclick=()=>{
-const ks=Object.keys(cart);
-const n=$('cn').value.trim(),p=$('qph').value.trim(),em=$('qem').value.trim(),city=$('qct').value.trim(),addr=$('ca').value.trim(),req=$('qreq').value.trim();
-if(!n){toast('Please enter your name / hospital / lab');$('cn').focus();return}
-if(!p){toast('Please enter your phone number');$('qph').focus();return}
-if(!/^[+()\d\s.-]{7,20}$/.test(p)||p.replace(/\D/g,'').length<7){toast('Please enter a valid phone number');$('qph').focus();return}
-if(!ks.length&&!req){toast('Add products to the list or describe your requirement');$('qreq').focus();return}
-let items=ks.length?'\n\n*Items from Quote List:*\n'+ks.map((k,i)=>(i+1)+'. '+k+' x '+cart[k].q).join('\n'):'';
-const t='*Quotation Request - Edge Biogene*\nName / Hospital / Lab: '+n+'\nPhone: '+p+'\nEmail: '+(em||'-')+'\nShipping city / PIN: '+(city||'-')+'\nDelivery address: '+(addr||'-')+(req?'\n\n*Additional requirement:*\n'+req:'')+items+'\n\nTotal quantity of listed items: '+tot()+'\nPlease share wholesale price, availability and lead time.';
+$('po').onclick=()=>{const ks=Object.keys(cart);
+if(!ks.length){toast('Quote list is empty');return}
+const n=$('cn').value.trim(),p=$('cp').value.trim();if(!n||!p){toast('Please enter name and phone');(n?$('cp'):$('cn')).focus();return}
+const t='*Quotation Request - Edge Biogene*\nName: '+n+'\nPhone: '+p+'\nAddress: '+($('ca').value.trim()||'-')+'\n\n*Items:*\n'+ks.map((k,i)=>(i+1)+'. '+k+'  x '+cart[k].q).join('\n')+'\n\nTotal items: '+tot()+'\nPlease share wholesale price, availability and lead time.';
 const w=$('cw');w.href='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
 $('cm').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+n)+'&body='+encodeURIComponent(t);
-$('cs').style.display='block';w.click();
-};
+$('cs').style.display='block';w.click()};
 render();
 })();
 
