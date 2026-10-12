@@ -30,43 +30,42 @@ rs();addEventListener('resize',rs);
 
 
 const IMG={
- "swab": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "syr": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "ins": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "ndl": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "edta": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "urn": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "petri": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "tt": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "fp": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "esr": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "nit": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "lat": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "bnd": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "strip": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "sharps": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "slides": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "pipette": "https://images.pexels.com/photos/4021773/pexels-photo-4021773.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4021773.jpg&fm=jpg",
- "clot": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "cotton1": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "cotton2": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "fist": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "cuvette": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "entero": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "aspen": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "hepa": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "trust": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "malaria": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "tropi": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "tropt": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "fist": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "cat-equipment": "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280547.jpg&fm=jpg",
- "cat-diagnostic": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "cat-hospital": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
- "cat-consumables": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
- "cat-reagents": "https://images.pexels.com/photos/4021773/pexels-photo-4021773.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4021773.jpg&fm=jpg",
- "cat-test-kits": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
- "cat-hospital-consumables": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg"
+ "swab": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "syr": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "ins": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "ndl": "https://images.pexels.com/photos/7722970/pexels-photo-7722970.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "edta": "https://images.pexels.com/photos/6627696/pexels-photo-6627696.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "urn": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "petri": "https://images.pexels.com/photos/10187649/pexels-photo-10187649.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "tt": "https://images.pexels.com/photos/8392573/pexels-photo-8392573.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "fp": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "esr": "https://images.pexels.com/photos/8442557/pexels-photo-8442557.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "nit": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "lat": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "bnd": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "strip": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "sharps": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "slides": "https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "pipette": "https://images.pexels.com/photos/8392541/pexels-photo-8392541.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "clot": "https://images.pexels.com/photos/6627696/pexels-photo-6627696.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cotton1": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cotton2": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "fist": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cuvette": "https://images.pexels.com/photos/8392573/pexels-photo-8392573.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "entero": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "aspen": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "hepa": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "trust": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "malaria": "https://images.pexels.com/photos/8390203/pexels-photo-8390203.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "tropi": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "tropt": "https://images.pexels.com/photos/8442557/pexels-photo-8442557.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-equipment": "https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-diagnostic": "https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG",
+ "cat-hospital": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-consumables": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-reagents": "https://cardiff.imgix.net/__data/assets/image/0019/31096/Chemistry-lab-bottles.jpg?auto=format&fit=crop&h=700&q=75&w=1000",
+ "cat-test-kits": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-hospital-consumables": "https://images.pexels.com/photos/7856723/pexels-photo-7856723.jpeg?auto=compress&cs=tinysrgb&w=900"
 };
 const PR=[["Plain Blood Tube 4 ml (Clot Activator)", "blood", "Red-top vacuum tube for serum and biochemistry tests.", "clot"], ["Disposable Syringe 3 ml / 5 ml", "blood", "Single-use sterile syringes (3 ml, 5 ml), EO sterilised.", "syr"], ["Insulin Syringe 1 ml (40 IU)", "blood", "Fine-needle insulin syringes with clear graduation.", "ins"], ["Vacuum Blood Collection Needle", "blood", "Multi-sample venous blood collection needles.", "ndl"], ["EDTA Blood Collection Tubes (K2 EDTA)", "blood", "Lavender-top vacuum tubes for haematology tests.", "edta"], ["Microscope Glass Slides", "lab", "Imported ground-edge glass slides, box pack.", "slides"], ["Plastic Pipette 1 ml", "lab", "Graduated disposable transfer pipettes for lab use.", "pipette"], ["Sterile Urine / Sample Container", "lab", "Sterile screw-cap containers in 30 ml and 50 ml.", "urn"], ["Petri Dish", "lab", "Clear glass petri dishes with lid for culture work.", "petri"], ["Glass Test Tube", "lab", "Round-bottom borosilicate glass test tubes.", "tt"], ["Filter Paper", "lab", "Laboratory filter paper circles for filtration.", "fp"], ["ESR / Graduated Glass Tubes", "lab", "Graduated borosilicate glass tubes for ESR and lab measurement.", "esr"], ["Sterilized Swab Stick", "lab", "Sterile swab sticks in tube for sample collection.", "swab"], ["Hemoglobin Cuvettes (DiaSpect)", "test", "Germany-made cuvettes for DiaSpect haemoglobin analyser.", "cuvette"], ["Enterocheck-WB (Typhoid IgM)", "test", "Rapid test for S. typhi IgM antibodies in serum, plasma or whole blood.", "entero"], ["Aspen Rapid Immunoassay Test", "test", "Rapid screening test cards, single-use.", "aspen"], ["Hepacard \u2013 HBsAg Test", "test", "Hepatitis B surface antigen rapid test, sensitivity 0.5 ng/ml.", "hepa"], ["Trustline Rapid Tests", "test", "Range of rapid diagnostic tests by Athenese-Dx.", "trust"], ["Malaria Pf/Pv Antigen Rapid Test", "test", "Trustline rapid test for detecting P. falciparum / P. vivax.", "malaria"], ["Troponin-I Rapid Test (Oscar)", "test", "Qualitative cardiac Troponin-I test, 10 tests per box.", "tropi"], ["Troponin T Sensitive (Roche cobas)", "test", "Roche cobas Troponin T sensitive reagent pack.", "tropt"], ["10 Parameter Urine Strips", "test", "Urinalysis reagent strips with colour chart bottle.", "strip"], ["Sharps Waste Container", "care", "Puncture-proof biomedical sharps disposal box with secure lid.", "sharps"], ["Absorbent Cotton Wool I.P. 500 g", "care", "Premium absorbent cotton roll, hospital and lab grade.", "cotton1"], ["Absorbent Cotton Wool I.P./B.P. 500 g", "care", "100% pure white, hydrogen peroxide bleached cotton rolls.", "fist"], ["Absorbent Cotton \u2013 Bulk Pack", "care", "Bulk 500 g cotton bags for wholesale supply.", "cotton2"], ["Nitrile Gloves, Powder Free (M / L)", "care", "Blue disposable nitrile examination gloves, latex free.", "nit"], ["Latex Examination Gloves", "care", "Single-use latex examination gloves for hospital and lab.", "lat"], ["Adhesive Spot Bandage (Medicated Dressings)", "care", "Round medicated spot dressings, 100 pcs per box.", "bnd"]],NI=[];
 const CT=["syr", "ins", "ndl", "edta", "urn", "petri", "tt", "fp", "esr", "nit", "lat", "bnd", "strip", "swab"];
@@ -100,11 +99,39 @@ const X={
 'lab-consumables':'Pipette Tips (10 / 200 / 1000 µl);Micro Centrifuge Tubes (1.5 / 2 ml);Centrifuge Tubes (15 / 50 ml);Cryovials;Cover Slips;Test Tube Racks;Slide Storage Boxes;Staining Jars;Wash Bottles;Measuring Cylinders & Beakers;Reagent Bottles;Droppers;Culture Tubes',
 'hospital-consumables':'IV Cannula;IV Infusion Set;Foley Catheter;Urine Collection Bag;Surgical Face Mask;N95 Respirator;Disposable Gown / PPE Kit;Surgical Gloves (Sterile);Cotton Gauze & Swabs;Crepe Bandage;Surgical Blades;Disposable Cap & Shoe Cover;Micropore Tape;Oxygen Mask;Nebulizer Mask;ECG Electrodes'};
 const FROM={'test-kits':['test'],'lab-consumables':['lab','blood'],'hospital-consumables':['care']};
+
+function imageForProduct(n, category){
+ const t=n.toLowerCase();
+ if(/microscope/.test(t)) return IMG['cat-equipment'];
+ if(/centrifuge/.test(t)) return 'https://images.pexels.com/photos/8442029/pexels-photo-8442029.jpeg?auto=compress&cs=tinysrgb&w=900';
+ if(/hematology|cell counter|blood gas|hba1c|hemoglobin meter|electrolyte analyzer/.test(t)) return 'https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG';
+ if(/biochemistry analyzer|semi-auto|fully auto|coagulation analyzer|immunoassay analyzer|elisa reader|elisa plate washer|urine analyzer|esr analyzer|blood gas analyzer|analyzer/.test(t)) return 'https://www.teikyo-mizonokuchi.jp/gaiyo/labo/img/09991_02.jpg';
+ if(/pcr|hplc|biosafety cabinet|laminar air flow|incubator|autoclave|hot air oven|water bath|spectrophotometer|colorimeter|vortex|magnetic stirrer|balance|ph meter|deep freezer|laboratory refrigerator/.test(t)) return 'https://images.pexels.com/photos/3735732/pexels-photo-3735732.jpeg?auto=compress&cs=tinysrgb&w=900';
+ if(/reagent|stain|culture media|calibrator|control|antisera|antigen|chemical|diluent|lyse|cleaner|buffer|solution/.test(t)) return IMG['cat-reagents'];
+ if(/rapid test|test kit|test card|dengue|pregnancy|hcg|h\. pylori|chikungunya|crp rapid|malaria|troponin|hepacard|enterocheck|trustline|aspen/.test(t)) return IMG['cat-test-kits'];
+ if(/syringe|needle|insulin/.test(t)) return IMG['syr'];
+ if(/glove|nitrile|latex/.test(t)) return IMG['nit'];
+ if(/cotton|bandage|gauze|sharps|catheter|mask|ppe|gown|iv cannula|infusion set|urine collection bag|face mask|shoe cover|oxygen mask|nebulizer mask|ecg electrode/.test(t)) return IMG['cat-hospital-consumables'];
+ if(/blood collection|edta|clot activator|blood tube|vacuum tube|blood sample|vacutainer|esr tube/.test(t)) return IMG['edta'];
+ if(/petri|culture dish/.test(t)) return IMG['petri'];
+ if(/pipette|pipette tip|dropper|micropipette/.test(t)) return IMG['pipette'];
+ if(/test tube|glassware|beaker|flask|slide|cover slip|tube rack|cryovial|centrifuge tube|reagent bottle|measuring cylinder|staining jar|wash bottle/.test(t)) return IMG['tt'];
+ if(/urine|sample container|specimen container/.test(t)) return IMG['urn'];
+ if(/hospital bed|stretcher|wheelchair|examination couch|operating table|instrument trolley|patient monitor|ecg machine|defibrillator|ventilator|infusion pump|syringe pump|oxygen concentrator|pulse oximeter|nebulizer|suction machine|blood pressure|fetal doppler|thermometer|phototherapy|infant warmer/.test(t)) return IMG['cat-hospital'];
+ if(category==='analyzers') return IMG['cat-diagnostic'];
+ if(category==='reagents') return IMG['cat-reagents'];
+ if(category==='test-kits') return IMG['cat-test-kits'];
+ if(category==='hospital-consumables') return IMG['cat-hospital-consumables'];
+ if(category==='lab-consumables') return IMG['cat-consumables'];
+ if(category==='hospital-equipment') return IMG['cat-hospital'];
+ return IMG['cat-equipment'];
+}
+
 const cnav=a=>CATS2.map(c=>'<a class="tab'+(c[0]===a?' on':'')+'" href="#/c/'+c[0]+'">'+c[2]+' '+c[1]+'</a>').join('');
 const CATIMG={'Laboratory Equipment':'cat-equipment','Analyzers & Machines':'cat-diagnostic','Hospital Equipment':'cat-hospital','Reagents & Chemicals':'cat-reagents','Diagnostic Test Kits':'cat-test-kits','Lab Consumables & Plasticware':'cat-consumables','Hospital Consumables':'cat-hospital-consumables'};
 const ccard=(t,d,k,e,l)=>{const src=k?IMG[k]:IMG[CATIMG[l]];return `<div class="pc" data-k="${k||''}" data-t="${t.toLowerCase()}"><div class="im ${CT.includes(k)?'ct':''}"><img loading="lazy" alt="${t}" src="${src}" onerror="this.style.display='none'"></div><div class="bd"><small>${l}</small><h3>${t}</h3><p>${d}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`};
 function showCat(sl){const C=CATS2.find(x=>x[0]===sl)||CATS2[0];
-const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,null,C[2],C[1])));
+const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,imageForProduct(n,C[0]),C[2],C[1])));
 const bg=C[4]?'url('+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
 document.getElementById('cpc').innerHTML=`<div class="cban" style="background:linear-gradient(90deg,rgba(5,15,50,.85),rgba(5,15,50,.2)),${bg}"><div><h2>${C[2]} ${C[1]}</h2><p>${C[3]}</p><span class="cn">${it.length} products</span></div></div><div class="tabs">${cnav(C[0])}<a class="tab" href="#/products">All Products</a></div><div class="pbar"><input id="cq" placeholder="🔍 Search in ${C[1]}..."></div><div class="pg" id="cpg">${it.join('')}</div><p class="more">Can't find your brand or model? <a class="btn" href="#contact">Request Custom Sourcing</a></p>`;
 const g=document.getElementById('cpg');
