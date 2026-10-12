@@ -10,7 +10,7 @@ pr.onclick=e=>{const q=e.target.dataset.q;if(q){const m=document.getElementById(
 document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();
 const g=id=>document.getElementById(id).value.trim();
 let ci='';try{const c=JSON.parse(localStorage.getItem('eb_cart')||'{}'),k=Object.keys(c);if(k.length)ci='\n\nQuote list:\n'+k.map((x,i)=>(i+1)+'. '+x+' x '+c[x].q).join('\n')}catch(x){}
-const t='*Request for Quotation - Edge Biogene*\nName: '+g('n')+'\nCompany: '+(g('co')||'-')+'\nPhone: '+g('ph')+'\nEmail: '+(g('em')||'-')+'\nCity/PIN: '+(g('ct')||'-')+'\nRequirement:\n'+g('m')+ci;
+const t='*Request for Quotation - Edge Biogene*\nName: '+g('n')+'\nCompany: '+(g('company')||'-')+'\nPhone: '+g('ph')+'\nEmail: '+(g('em')||'-')+'\nCity/PIN: '+(g('ct')||'-')+'\nRequirement:\n'+g('m')+ci;
 const u='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
 const wl=document.getElementById('wl');wl.href=u;
 document.getElementById('ml').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+g('n'))+'&body='+encodeURIComponent(t);
