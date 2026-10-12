@@ -60,8 +60,8 @@ const IMG={
  "tropi": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
  "tropt": "https://images.pexels.com/photos/8442557/pexels-photo-8442557.jpeg?auto=compress&cs=tinysrgb&w=900",
  "cat-equipment": "https://images.pexels.com/photos/28570735/pexels-photo-28570735.jpeg?auto=compress&cs=tinysrgb&w=900",
- "cat-diagnostic": "https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG",
- "cat-hospital": "https://images.pexels.com/photos/33394283/pexels-photo-33394283.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-diagnostic": "https://images.pexels.com/photos/34642915/pexels-photo-34642915.jpeg?auto=compress&cs=tinysrgb&w=900",
+ "cat-hospital": "https://images.pexels.com/photos/13697729/pexels-photo-13697729.jpeg?auto=compress&cs=tinysrgb&w=900",
  "cat-consumables": "https://images.pexels.com/photos/10188002/pexels-photo-10188002.jpeg?auto=compress&cs=tinysrgb&w=900",
  "cat-reagents": "https://cardiff.imgix.net/__data/assets/image/0019/31096/Chemistry-lab-bottles.jpg?auto=format&fit=crop&h=700&q=75&w=1000",
  "cat-test-kits": "https://images.pexels.com/photos/7867251/pexels-photo-7867251.jpeg?auto=compress&cs=tinysrgb&w=900",
@@ -104,8 +104,9 @@ function imageForProduct(n, category){
  const t=n.toLowerCase();
  if(/microscope/.test(t)) return IMG['cat-equipment'];
  if(/centrifuge/.test(t)) return 'https://images.pexels.com/photos/8442029/pexels-photo-8442029.jpeg?auto=compress&cs=tinysrgb&w=900';
- if(/hematology|cell counter|blood gas|hba1c|hemoglobin meter|electrolyte analyzer/.test(t)) return 'https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG';
- if(/biochemistry analyzer|semi-auto|fully auto|coagulation analyzer|immunoassay analyzer|elisa reader|elisa plate washer|urine analyzer|esr analyzer|blood gas analyzer|analyzer/.test(t)) return 'https://www.teikyo-mizonokuchi.jp/gaiyo/labo/img/09991_02.jpg';
+ if(/hematology|cell counter/.test(t)) return 'https://iitr.ac.in/Hospital/Facilities/assets/053d7b9eef98fc6535d336b9448f57daf090a9335c002091bb6a8ff6d356239a_Hematology%20Cell%20Counter%20%28SYSMEX%20XN%20350%29.JPG';
+ if(/blood gas|hba1c|hemoglobin meter|electrolyte analyzer/.test(t)) return 'https://www.teikyo-mizonokuchi.jp/gaiyo/labo/img/09991_02.jpg';
+ if(/biochemistry analyzer|semi-auto|fully auto|coagulation analyzer|immunoassay analyzer|elisa reader|elisa plate washer|urine analyzer|esr analyzer|analyzer/.test(t)) return 'https://images.pexels.com/photos/34642915/pexels-photo-34642915.jpeg?auto=compress&cs=tinysrgb&w=900';
  if(/pcr|hplc|biosafety cabinet|laminar air flow|incubator|autoclave|hot air oven|water bath|spectrophotometer|colorimeter|vortex|magnetic stirrer|balance|ph meter|deep freezer|laboratory refrigerator/.test(t)) return 'https://images.pexels.com/photos/3735732/pexels-photo-3735732.jpeg?auto=compress&cs=tinysrgb&w=900';
  if(/reagent|stain|culture media|calibrator|control|antisera|antigen|chemical|diluent|lyse|cleaner|buffer|solution/.test(t)) return IMG['cat-reagents'];
  if(/rapid test|test kit|test card|dengue|pregnancy|hcg|h\. pylori|chikungunya|crp rapid|malaria|troponin|hepacard|enterocheck|trustline|aspen/.test(t)) return IMG['cat-test-kits'];
