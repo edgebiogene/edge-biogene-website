@@ -30,43 +30,43 @@ rs();addEventListener('resize',rs);
 
 
 const IMG={
- "swab": "images/swab.svg",
- "syr": "images/syr.svg",
- "ins": "images/ins.svg",
- "ndl": "images/ndl.svg",
- "edta": "images/edta.svg",
- "urn": "images/urn.svg",
- "petri": "images/petri.svg",
- "tt": "images/tt.svg",
- "fp": "images/fp.svg",
- "esr": "images/esr.svg",
- "nit": "images/nit.svg",
- "lat": "images/lat.svg",
- "bnd": "images/bnd.svg",
- "strip": "images/strip.svg",
- "sharps": "images/sharps.svg",
- "slides": "images/slides.svg",
- "pipette": "images/pipette.svg",
- "clot": "images/clot.svg",
- "cotton1": "images/cotton1.svg",
- "cotton2": "images/cotton2.svg",
+ "swab": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "syr": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "ins": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "ndl": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "edta": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "urn": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "petri": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "tt": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "fp": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "esr": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "nit": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "lat": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "bnd": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "strip": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "sharps": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "slides": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "pipette": "https://images.pexels.com/photos/4021773/pexels-photo-4021773.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4021773.jpg&fm=jpg",
+ "clot": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "cotton1": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "cotton2": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "fist": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "cuvette": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "entero": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "aspen": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "hepa": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "trust": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "malaria": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "tropi": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "tropt": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
  "fist": "images/fist.svg",
- "cuvette": "images/cuvette.svg",
- "entero": "images/entero.svg",
- "aspen": "images/aspen.svg",
- "hepa": "images/hepa.svg",
- "trust": "images/trust.svg",
- "malaria": "images/malaria.svg",
- "tropi": "images/tropi.svg",
- "tropt": "images/tropt.svg",
- "fist": "images/fist.svg",
- "cat-equipment": "images/cat-equipment.svg",
- "cat-diagnostic": "images/cat-diagnostic.svg",
- "cat-hospital": "images/cat-hospital.svg",
- "cat-consumables": "images/cat-consumables.svg",
- "cat-reagents": "images/cat-reagents.svg",
- "cat-test-kits": "images/cat-test-kits.svg",
- "cat-hospital-consumables": "images/cat-hospital-consumables.svg"
+ "cat-equipment": "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280547.jpg&fm=jpg",
+ "cat-diagnostic": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "cat-hospital": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg",
+ "cat-consumables": "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg",
+ "cat-reagents": "https://images.pexels.com/photos/4021773/pexels-photo-4021773.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4021773.jpg&fm=jpg",
+ "cat-test-kits": "https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg",
+ "cat-hospital-consumables": "https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg"
 };
 const PR=[["Plain Blood Tube 4 ml (Clot Activator)", "blood", "Red-top vacuum tube for serum and biochemistry tests.", "clot"], ["Disposable Syringe 3 ml / 5 ml", "blood", "Single-use sterile syringes (3 ml, 5 ml), EO sterilised.", "syr"], ["Insulin Syringe 1 ml (40 IU)", "blood", "Fine-needle insulin syringes with clear graduation.", "ins"], ["Vacuum Blood Collection Needle", "blood", "Multi-sample venous blood collection needles.", "ndl"], ["EDTA Blood Collection Tubes (K2 EDTA)", "blood", "Lavender-top vacuum tubes for haematology tests.", "edta"], ["Microscope Glass Slides", "lab", "Imported ground-edge glass slides, box pack.", "slides"], ["Plastic Pipette 1 ml", "lab", "Graduated disposable transfer pipettes for lab use.", "pipette"], ["Sterile Urine / Sample Container", "lab", "Sterile screw-cap containers in 30 ml and 50 ml.", "urn"], ["Petri Dish", "lab", "Clear glass petri dishes with lid for culture work.", "petri"], ["Glass Test Tube", "lab", "Round-bottom borosilicate glass test tubes.", "tt"], ["Filter Paper", "lab", "Laboratory filter paper circles for filtration.", "fp"], ["ESR / Graduated Glass Tubes", "lab", "Graduated borosilicate glass tubes for ESR and lab measurement.", "esr"], ["Sterilized Swab Stick", "lab", "Sterile swab sticks in tube for sample collection.", "swab"], ["Hemoglobin Cuvettes (DiaSpect)", "test", "Germany-made cuvettes for DiaSpect haemoglobin analyser.", "cuvette"], ["Enterocheck-WB (Typhoid IgM)", "test", "Rapid test for S. typhi IgM antibodies in serum, plasma or whole blood.", "entero"], ["Aspen Rapid Immunoassay Test", "test", "Rapid screening test cards, single-use.", "aspen"], ["Hepacard \u2013 HBsAg Test", "test", "Hepatitis B surface antigen rapid test, sensitivity 0.5 ng/ml.", "hepa"], ["Trustline Rapid Tests", "test", "Range of rapid diagnostic tests by Athenese-Dx.", "trust"], ["Malaria Pf/Pv Antigen Rapid Test", "test", "Trustline rapid test for detecting P. falciparum / P. vivax.", "malaria"], ["Troponin-I Rapid Test (Oscar)", "test", "Qualitative cardiac Troponin-I test, 10 tests per box.", "tropi"], ["Troponin T Sensitive (Roche cobas)", "test", "Roche cobas Troponin T sensitive reagent pack.", "tropt"], ["10 Parameter Urine Strips", "test", "Urinalysis reagent strips with colour chart bottle.", "strip"], ["Sharps Waste Container", "care", "Puncture-proof biomedical sharps disposal box with secure lid.", "sharps"], ["Absorbent Cotton Wool I.P. 500 g", "care", "Premium absorbent cotton roll, hospital and lab grade.", "cotton1"], ["Absorbent Cotton Wool I.P./B.P. 500 g", "care", "100% pure white, hydrogen peroxide bleached cotton rolls.", "fist"], ["Absorbent Cotton \u2013 Bulk Pack", "care", "Bulk 500 g cotton bags for wholesale supply.", "cotton2"], ["Nitrile Gloves, Powder Free (M / L)", "care", "Blue disposable nitrile examination gloves, latex free.", "nit"], ["Latex Examination Gloves", "care", "Single-use latex examination gloves for hospital and lab.", "lat"], ["Adhesive Spot Bandage (Medicated Dressings)", "care", "Round medicated spot dressings, 100 pcs per box.", "bnd"]],NI=[];
 const CT=["syr", "ins", "ndl", "edta", "urn", "petri", "tt", "fp", "esr", "nit", "lat", "bnd", "strip", "swab"];
@@ -84,13 +84,13 @@ lb.onclick=()=>lb.classList.remove('on');
 /* ===== CATEGORY PAGES ===== */
 const DEF='Available on enquiry. Brand, model and specification as per your requirement.';
 const CATS2=[
-['lab-equipment','Laboratory Equipment','🔬','Microscopes, centrifuges, incubators, sterilisation and measuring equipment for laboratories.','cat-equipment.svg'],
-['analyzers','Analyzers & Machines','⚙️','Hematology, biochemistry, electrolyte, coagulation, immunoassay analyzers and other diagnostic machines.','cat-diagnostic.svg'],
-['hospital-equipment','Hospital Equipment','🏥','Patient monitoring, emergency, respiratory and general hospital equipment and furniture.','cat-hospital.svg'],
-['reagents','Reagents & Chemicals','🧴','Biochemistry, hematology and serology reagents, stains, culture media, calibrators and controls.','cat-reagents.svg'],
-['test-kits','Diagnostic Test Kits','🧪','Rapid test kits and cardiac markers from leading brands.','cat-test-kits.svg'],
-['lab-consumables','Lab Consumables & Plasticware','🧫','Blood collection, sample containers, plasticware and glassware for everyday lab work.','cat-consumables.svg'],
-['hospital-consumables','Hospital Consumables','🧤','Gloves, cotton, dressings, catheters, IV products and protective supplies.','cat-hospital-consumables.svg']];
+['lab-equipment','Laboratory Equipment','🔬','Microscopes, centrifuges, incubators, sterilisation and measuring equipment for laboratories.','https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280547.jpg&fm=jpg'],
+['analyzers','Analyzers & Machines','⚙️','Hematology, biochemistry, electrolyte, coagulation, immunoassay analyzers and other diagnostic machines.','https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg'],
+['hospital-equipment','Hospital Equipment','🏥','Patient monitoring, emergency, respiratory and general hospital equipment and furniture.','https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg'],
+['reagents','Reagents & Chemicals','🧴','Biochemistry, hematology and serology reagents, stains, culture media, calibrators and controls.','https://images.pexels.com/photos/4021773/pexels-photo-4021773.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4021773.jpg&fm=jpg'],
+['test-kits','Diagnostic Test Kits','🧪','Rapid test kits and cardiac markers from leading brands.','https://images.pexels.com/photos/2280568/pexels-photo-2280568.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280568.jpg&fm=jpg'],
+['lab-consumables','Lab Consumables & Plasticware','🧫','Blood collection, sample containers, plasticware and glassware for everyday lab work.','https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?cs=srgb&dl=pexels-chokniti-khongchum-1197604-2280549.jpg&fm=jpg'],
+['hospital-consumables','Hospital Consumables','🧤','Gloves, cotton, dressings, catheters, IV products and protective supplies.','https://images.pexels.com/photos/7722927/pexels-photo-7722927.jpeg?cs=srgb&dl=pexels-tara-winstead-7722927.jpg&fm=jpg']];
 const X={
 'lab-equipment':'Binocular Compound Microscope;Trinocular Microscope (camera port);Table-Top Centrifuge;Refrigerated Centrifuge;Laboratory Incubator;Hot Air Oven;Vertical Autoclave;Horizontal Autoclave;Water Bath;Analytical Balance;pH Meter;Colorimeter / Spectrophotometer;Vortex Mixer;Magnetic Stirrer with Hot Plate;Laminar Air Flow Cabinet;Biosafety Cabinet;Laboratory Refrigerator;Deep Freezer (-20 °C / -40 °C);Micropipettes (Single / Multichannel);Rotator / Shaker',
 'analyzers':'5-Part Hematology Analyzer;3-Part Hematology Analyzer (Cell Counter);Semi-Auto Biochemistry Analyzer;Fully Auto Biochemistry Analyzer;Electrolyte Analyzer (Na / K / Cl);Coagulation Analyzer (PT / aPTT);ELISA Reader;ELISA Plate Washer;Urine Analyzer (Strip Reader);ESR Analyzer;Blood Gas Analyzer;HbA1c Analyzer;Immunoassay Analyzer (CLIA / FIA);Hemoglobin Meter;Glucometer;Real-Time PCR System;Cardiac Marker Reader (Point of Care)',
@@ -105,7 +105,7 @@ const CATIMG={'Laboratory Equipment':'cat-equipment','Analyzers & Machines':'cat
 const ccard=(t,d,k,e,l)=>{const src=k?IMG[k]:IMG[CATIMG[l]];return `<div class="pc" data-k="${k||''}" data-t="${t.toLowerCase()}"><div class="im ${CT.includes(k)?'ct':''}"><img loading="lazy" alt="${t}" src="${src}" onerror="this.style.display='none'"></div><div class="bd"><small>${l}</small><h3>${t}</h3><p>${d}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`};
 function showCat(sl){const C=CATS2.find(x=>x[0]===sl)||CATS2[0];
 const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,null,C[2],C[1])));
-const bg=C[4]?'url(images/'+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
+const bg=C[4]?'url('+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
 document.getElementById('cpc').innerHTML=`<div class="cban" style="background:linear-gradient(90deg,rgba(5,15,50,.85),rgba(5,15,50,.2)),${bg}"><div><h2>${C[2]} ${C[1]}</h2><p>${C[3]}</p><span class="cn">${it.length} products</span></div></div><div class="tabs">${cnav(C[0])}<a class="tab" href="#/products">All Products</a></div><div class="pbar"><input id="cq" placeholder="🔍 Search in ${C[1]}..."></div><div class="pg" id="cpg">${it.join('')}</div><p class="more">Can't find your brand or model? <a class="btn" href="#contact">Request Custom Sourcing</a></p>`;
 const g=document.getElementById('cpg');
 document.getElementById('cq').oninput=e=>{const q=e.target.value.toLowerCase();g.querySelectorAll('.pc').forEach(x=>x.classList.toggle('hide',!x.dataset.t.includes(q)))};
