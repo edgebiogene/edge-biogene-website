@@ -1,122 +1,56 @@
-const P=[["Sterilized Urine Container 30/50 ml","lab"],["Petri Dish","lab"],["Glass Test Tube","lab"],["Filter Paper","lab"],["Microscope Glass Slides","lab"],["Plastic Pipette","lab"],["Disposable ESR Tube","lab"],["Sterilized Swab Stick","lab"],
-["Vacuum Blood Collection Needle","blood"],["EDTA Blood Collection Tube","blood"],["Clot Activator (Plain) Tube","blood"],["Pediatric Blood Tubes","blood"],["Syringe 3 ml / 5 ml","blood"],["Insulin Syringe","blood"],
-["HIV / HBsAg / HCV Rapid Tests","test"],["Malaria Pf/Pv Antigen Test","test"],["Typhoid IgM (Enterocheck)","test"],["Syphilis Rapid Test","test"],["Troponin I & Troponin T","test"],["10 Parameter Urine Strips","test"],["Hemoglobin Cuvettes","test"],
-["Nitrile Gloves (M / L)","care"],["Latex Examination Gloves","care"],["Absorbent Cotton Roll 500 g","care"],["Adhesive Spot Bandage","care"],["Sharps Waste Container","care"]];
-const KM={"Sterilized Urine Container 30/50 ml":"urn","Petri Dish":"petri","Glass Test Tube":"tt","Filter Paper":"fp","Microscope Glass Slides":"slides","Plastic Pipette":"pipette","Disposable ESR Tube":"esr","Sterilized Swab Stick":"swab","Vacuum Blood Collection Needle":"ndl","EDTA Blood Collection Tube":"edta","Clot Activator (Plain) Tube":"clot","Pediatric Blood Tubes":"edta","Syringe 3 ml / 5 ml":"syr","Insulin Syringe":"ins","HIV / HBsAg / HCV Rapid Tests":"hepa","Malaria Pf/Pv Antigen Test":"malaria","Typhoid IgM (Enterocheck)":"entero","Troponin I & Troponin T":"tropi","10 Parameter Urine Strips":"strip","Hemoglobin Cuvettes":"cuvette","Nitrile Gloves (M / L)":"nit","Latex Examination Gloves":"lat","Absorbent Cotton Roll 500 g":"cotton1","Adhesive Spot Bandage":"bnd","Sharps Waste Container":"sharps"};
-const pr=document.getElementById('prods');
-P.forEach(([t,c])=>{const d=document.createElement('div');d.className='p rv';d.dataset.c=c;d.dataset.k=KM[t]||'';d.innerHTML='<b>'+t+'</b><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="'+t+'">📋 Add to Quote</button>';pr.appendChild(d)});
-document.getElementById('tabs').onclick=e=>{const f=e.target.dataset.f;if(!f)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===e.target));pr.querySelectorAll('.p').forEach(p=>{p.classList.toggle('hide',f!=='all'&&p.dataset.c!==f);p.classList.add('in')})};
-pr.onclick=e=>{const q=e.target.dataset.q;if(q){const m=document.getElementById('m');m.value=(m.value?m.value+'\n':'')+'• '+q+' – Qty: '}};
-document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();
-const g=id=>document.getElementById(id).value.trim();
-const ty=(document.querySelector('#types .ty.on')||{dataset:{v:''}}).dataset.v;
-let ci='';try{const c=JSON.parse(localStorage.getItem('eb_cart')||'{}'),k=Object.keys(c);if(k.length)ci='\n\nQuote list:\n'+k.map((x,i)=>(i+1)+'. '+x+' x '+c[x].q).join('\n')}catch(x){}
-const t='*Request for Quotation - Edge Biogene*\nEnquiry type: '+ty+'\nName: '+g('n')+'\nCompany: '+(g('fco')||'-')+'\nPhone: '+g('ph')+'\nEmail: '+(g('em')||'-')+'\nCity/PIN: '+(g('ct')||'-')+'\nRequirement:\n'+g('m')+ci;
-const u='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
-const wl=document.getElementById('wl');wl.href=u;
-document.getElementById('ml').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+g('n'))+'&body='+encodeURIComponent(t);
-document.getElementById('st').classList.add('on');
-wl.click();});
-document.getElementById('types').addEventListener('click',e=>{const b=e.target.closest('.ty');if(!b)return;document.querySelectorAll('#types .ty').forEach(x=>x.classList.toggle('on',x===b))});
-function updFq(){const e=document.getElementById('fq');if(!e)return;let n=0;try{const c=JSON.parse(localStorage.getItem('eb_cart')||'{}');n=Object.keys(c).length}catch(x){}e.textContent=n?'📋 '+n+' item'+(n>1?'s':'')+' from your quote list will be included in this request.':'';e.style.display=n?'block':'none'}
-// hero search -> products page
-(function(){const go=()=>{const v=document.getElementById('hq').value;location.hash='#/products';setTimeout(()=>{const q=document.getElementById('q');q.value=v;q.dispatchEvent(new Event('input'))},60)};document.getElementById('hb').onclick=go;document.getElementById('hq').onkeydown=e=>{if(e.key==='Enter')go()}})();
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-const co=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const el=x.target,n=+el.dataset.n;let i=0;const s=setInterval(()=>{i+=Math.ceil(n/40);if(i>=n){i=n;clearInterval(s)}el.textContent=i+(n>=500?'+':'')},35);co.unobserve(el)}}));
-document.querySelectorAll('[data-n]').forEach(el=>co.observe(el));
-// particle background
-const cv=document.getElementById('bg'),cx=cv.getContext('2d');let W,H,pts=[];
+const IMG={"swab": "/images/swab.jpg", "syr": "/images/syr.jpg", "ins": "/images/ins.jpg", "ndl": "/images/ndl.jpg", "edta": "/images/edta.jpg", "urn": "/images/urn.jpg", "petri": "/images/petri.jpg", "tt": "/images/tt.jpg", "fp": "/images/fp.jpg", "esr": "/images/esr.jpg", "nit": "/images/nit.jpg", "lat": "/images/lat.jpg", "bnd": "/images/bnd.jpg", "strip": "/images/strip.jpg", "sharps": "/images/sharps.jpg", "slides": "/images/slides.jpg", "pipette": "/images/pipette.jpg", "clot": "/images/clot.jpg", "cotton1": "/images/cotton1.jpg", "cotton2": "/images/cotton2.jpg", "fist": "/images/fist.jpg", "cuvette": "/images/cuvette.jpg", "entero": "/images/entero.jpg", "aspen": "/images/aspen.jpg", "hepa": "/images/hepa.jpg", "trust": "/images/trust.jpg", "malaria": "/images/malaria.jpg", "tropi": "/images/tropi.jpg", "tropt": "/images/tropt.jpg"};
+window.track=function(n,p){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push(Object.assign({event:n},p||{}));if(window.gtag)window.gtag('event',n,p||{})}catch(e){}};
+const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+// particle background (skipped for reduced motion)
+const cv=document.getElementById('bg');
+if(cv&&!RM){const cx=cv.getContext('2d');let W,H,pts=[];
 function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;pts=Array.from({length:Math.min(60,W/22)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
 rs();addEventListener('resize',rs);
-(function a(){cx.clearRect(0,0,W,H);pts.forEach((p,i)=>{p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;cx.fillStyle='#2563eb';cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.strokeStyle='rgba(37,99,235,'+(1-d/130)*.3+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}});requestAnimationFrame(a)})();
-
-
-const IMG={
- "swab": "images/swab.jpg",
- "syr": "images/syr.jpg",
- "ins": "images/ins.jpg",
- "ndl": "images/ndl.jpg",
- "edta": "images/edta.jpg",
- "urn": "images/urn.jpg",
- "petri": "images/petri.jpg",
- "tt": "images/tt.jpg",
- "fp": "images/fp.jpg",
- "esr": "images/esr.jpg",
- "nit": "images/nit.jpg",
- "lat": "images/lat.jpg",
- "bnd": "images/bnd.jpg",
- "strip": "images/strip.jpg",
- "sharps": "images/sharps.jpg",
- "slides": "images/slides.jpg",
- "pipette": "images/pipette.jpg",
- "clot": "images/clot.jpg",
- "cotton1": "images/cotton1.jpg",
- "cotton2": "images/cotton2.jpg",
- "fist": "images/fist.jpg",
- "cuvette": "images/cuvette.jpg",
- "entero": "images/entero.jpg",
- "aspen": "images/aspen.jpg",
- "hepa": "images/hepa.jpg",
- "trust": "images/trust.jpg",
- "malaria": "images/malaria.jpg",
- "tropi": "images/tropi.jpg",
- "tropt": "images/tropt.jpg"
-};
-const PR=[["Plain Blood Tube 4 ml (Clot Activator)", "blood", "Red-top vacuum tube for serum and biochemistry tests.", "clot"], ["Disposable Syringe 3 ml / 5 ml", "blood", "Single-use sterile syringes (3 ml, 5 ml), EO sterilised.", "syr"], ["Insulin Syringe 1 ml (40 IU)", "blood", "Fine-needle insulin syringes with clear graduation.", "ins"], ["Vacuum Blood Collection Needle", "blood", "Multi-sample venous blood collection needles.", "ndl"], ["EDTA Blood Collection Tubes (K2 EDTA)", "blood", "Lavender-top vacuum tubes for haematology tests.", "edta"], ["Microscope Glass Slides", "lab", "Imported ground-edge glass slides, box pack.", "slides"], ["Plastic Pipette 1 ml", "lab", "Graduated disposable transfer pipettes for lab use.", "pipette"], ["Sterile Urine / Sample Container", "lab", "Sterile screw-cap containers in 30 ml and 50 ml.", "urn"], ["Petri Dish", "lab", "Clear glass petri dishes with lid for culture work.", "petri"], ["Glass Test Tube", "lab", "Round-bottom borosilicate glass test tubes.", "tt"], ["Filter Paper", "lab", "Laboratory filter paper circles for filtration.", "fp"], ["ESR / Graduated Glass Tubes", "lab", "Graduated borosilicate glass tubes for ESR and lab measurement.", "esr"], ["Sterilized Swab Stick", "lab", "Sterile swab sticks in tube for sample collection.", "swab"], ["Hemoglobin Cuvettes (DiaSpect)", "test", "Germany-made cuvettes for DiaSpect haemoglobin analyser.", "cuvette"], ["Enterocheck-WB (Typhoid IgM)", "test", "Rapid test for S. typhi IgM antibodies in serum, plasma or whole blood.", "entero"], ["Aspen Rapid Immunoassay Test", "test", "Rapid screening test cards, single-use.", "aspen"], ["Hepacard \u2013 HBsAg Test", "test", "Hepatitis B surface antigen rapid test, sensitivity 0.5 ng/ml.", "hepa"], ["Trustline Rapid Tests", "test", "Range of rapid diagnostic tests by Athenese-Dx.", "trust"], ["Malaria Pf/Pv Antigen Rapid Test", "test", "Trustline rapid test for detecting P. falciparum / P. vivax.", "malaria"], ["Troponin-I Rapid Test (Oscar)", "test", "Qualitative cardiac Troponin-I test, 10 tests per box.", "tropi"], ["Troponin T Sensitive (Roche cobas)", "test", "Roche cobas Troponin T sensitive reagent pack.", "tropt"], ["10 Parameter Urine Strips", "test", "Urinalysis reagent strips with colour chart bottle.", "strip"], ["Sharps Waste Container", "care", "Puncture-proof biomedical sharps disposal box with secure lid.", "sharps"], ["Absorbent Cotton Wool I.P. 500 g", "care", "Premium absorbent cotton roll, hospital and lab grade.", "cotton1"], ["Absorbent Cotton Wool I.P./B.P. 500 g", "care", "100% pure white, hydrogen peroxide bleached cotton rolls.", "fist"], ["Absorbent Cotton \u2013 Bulk Pack", "care", "Bulk 500 g cotton bags for wholesale supply.", "cotton2"], ["Nitrile Gloves, Powder Free (M / L)", "care", "Blue disposable nitrile examination gloves, latex free.", "nit"], ["Latex Examination Gloves", "care", "Single-use latex examination gloves for hospital and lab.", "lat"], ["Adhesive Spot Bandage (Medicated Dressings)", "care", "Round medicated spot dressings, 100 pcs per box.", "bnd"]],NI=[];
-const CT=["syr", "ins", "ndl", "edta", "urn", "petri", "tt", "fp", "esr", "nit", "lat", "bnd", "strip", "swab"];
-const CL={lab:'Lab Ware',blood:'Blood Collection',test:'Test Kits',care:'Care & Safety'};
-const pg=document.getElementById('pg');
-const card=(t,c,d,i,e)=>`<div class="pc" data-k="${i||''}" data-c="${c}" data-t="${t.toLowerCase()}"><div class="im ${i?'':'ph'} ${CT.includes(i)?'ct':''}">${i?'<img loading="lazy" alt="'+t+'" src="'+IMG[i]+'">':e}</div><div class="bd"><small>${CL[c]}</small><h3>${t}</h3><p>${d||'Available in bulk. Brand and size as per your requirement.'}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`;
-pg.innerHTML=PR.map(p=>card(p[0],p[1],p[2],p[3])).join('')+NI.map(p=>card(p[0],p[1],'',null,p[2])).join('');
-function flt(){const f=document.querySelector('#pt .on').dataset.f,q=document.getElementById('q').value.toLowerCase();pg.querySelectorAll('.pc').forEach(x=>x.classList.toggle('hide',(f!=='all'&&x.dataset.c!==f)||!x.dataset.t.includes(q)))}
-document.getElementById('pt').onclick=e=>{if(e.target.dataset.f){document.querySelectorAll('#pt .tab').forEach(x=>x.classList.toggle('on',x===e.target));flt()}};
-document.getElementById('q').oninput=flt;
+(function a(){cx.clearRect(0,0,W,H);pts.forEach((p,i)=>{p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;cx.fillStyle='#2563eb';cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.strokeStyle='rgba(37,99,235,'+(1-d/130)*.3+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}});requestAnimationFrame(a)})()}
+// products page: chips + search (+ ?q= from hero search)
+(function(){const g=document.getElementById('pg'),q=document.getElementById('q');if(!g||!q)return;let f='all';
+const run=()=>{const s=q.value.toLowerCase();g.querySelectorAll('.pc').forEach(x=>x.classList.toggle('hide',(f!=='all'&&x.dataset.c!==f)||!x.dataset.t.includes(s)))};
+q.oninput=()=>{run();if(q.value.length>2)track('search')};
+document.getElementById('pt').onclick=e=>{const t=e.target.closest('.tab');if(!t)return;f=t.dataset.f;document.querySelectorAll('#pt .tab').forEach(x=>x.classList.toggle('on',x===t));run()};
+const u=new URLSearchParams(location.search).get('q');if(u){q.value=u;run()}})();
+// lightbox + analytics events (no personal data is sent)
 const lb=document.getElementById('lb');
-pg.addEventListener('click',e=>{if(e.target.tagName==='IMG'){lb.querySelector('img').src=e.target.src;lb.classList.add('on')}const q=e.target.dataset.q;if(q){const m=document.getElementById('m');m.value=(m.value?m.value+'\n':'')+'• '+q+' – Qty: '}});
-lb.onclick=()=>lb.classList.remove('on');
-
-/* ===== CATEGORY PAGES ===== */
-const DEF='Available on enquiry. Brand, model and specification as per your requirement.';
-const CATS2=[
-['lab-equipment','Laboratory Equipment','🔬','Microscopes, centrifuges, incubators, sterilisation and measuring equipment for laboratories.','cat-equipment.jpg'],
-['analyzers','Analyzers & Machines','⚙️','Hematology, biochemistry, electrolyte, coagulation, immunoassay analyzers and other diagnostic machines.','cat-diagnostic.jpg'],
-['hospital-equipment','Hospital Equipment','🏥','Patient monitoring, emergency, respiratory and general hospital equipment and furniture.','cat-hospital.jpg'],
-['reagents','Reagents & Chemicals','🧴','Biochemistry, hematology and serology reagents, stains, culture media, calibrators and controls.',''],
-['test-kits','Diagnostic Test Kits','🧪','Rapid test kits and cardiac markers from leading brands.',''],
-['lab-consumables','Lab Consumables & Plasticware','🧫','Blood collection, sample containers, plasticware and glassware for everyday lab work.','cat-consumables.jpg'],
-['hospital-consumables','Hospital Consumables','🧤','Gloves, cotton, dressings, catheters, IV products and protective supplies.','']];
-const X={
-'lab-equipment':'Binocular Compound Microscope;Trinocular Microscope (camera port);Table-Top Centrifuge;Refrigerated Centrifuge;Laboratory Incubator;Hot Air Oven;Vertical Autoclave;Horizontal Autoclave;Water Bath;Analytical Balance;pH Meter;Colorimeter / Spectrophotometer;Vortex Mixer;Magnetic Stirrer with Hot Plate;Laminar Air Flow Cabinet;Biosafety Cabinet;Laboratory Refrigerator;Deep Freezer (-20 °C / -40 °C);Micropipettes (Single / Multichannel);Rotator / Shaker',
-'analyzers':'5-Part Hematology Analyzer;3-Part Hematology Analyzer (Cell Counter);Semi-Auto Biochemistry Analyzer;Fully Auto Biochemistry Analyzer;Electrolyte Analyzer (Na / K / Cl);Coagulation Analyzer (PT / aPTT);ELISA Reader;ELISA Plate Washer;Urine Analyzer (Strip Reader);ESR Analyzer;Blood Gas Analyzer;HbA1c Analyzer;Immunoassay Analyzer (CLIA / FIA);Hemoglobin Meter;Glucometer;Real-Time PCR System;Cardiac Marker Reader (Point of Care)',
-'hospital-equipment':'Multipara Patient Monitor;ECG Machine (3 / 6 / 12 Channel);Infusion Pump;Syringe Pump;Defibrillator;Ventilator;Oxygen Concentrator;Pulse Oximeter;Nebulizer;Suction Machine;Digital BP Monitor;Fetal Doppler;Digital / Infrared Thermometer;Weighing Scale;OT Light;Operating Table;Hospital Bed (Manual / Electric);Stretcher & Wheelchair;Examination Couch;Instrument Trolley;Phototherapy Unit;Infant Warmer',
-'reagents':'Glucose Reagent (GOD-POD);Urea / BUN Reagent;Creatinine Reagent;Uric Acid Reagent;Bilirubin (Total / Direct) Reagent;SGOT (AST) / SGPT (ALT) Reagent;Alkaline Phosphatase Reagent;Cholesterol / HDL / Triglycerides Reagent;Total Protein / Albumin Reagent;Calcium Reagent;HbA1c Kit;CRP Latex / Quantitative Kit;RA Factor / ASO Latex Kit;Widal Antigen Set;VDRL / RPR Antigen;Blood Grouping Antisera (A, B, D);Coombs Reagent;Hematology Diluent / Lyse / Cleaner;Giemsa / Leishman Stain;Gram Stain Kit;Field\'s Stain;ZN Stain (AFB);Culture Media (Nutrient / MacConkey / Blood Agar);Biochemistry Calibrators & Controls;Coagulation Reagents (PT / aPTT);ELISA Kits',
-'test-kits':'Dengue NS1 / IgG / IgM Rapid Test;Pregnancy (HCG) Rapid Card;H. Pylori Rapid Test;CRP Rapid Test;Chikungunya Rapid Test;Blood Group Rapid Card',
-'lab-consumables':'Pipette Tips (10 / 200 / 1000 µl);Micro Centrifuge Tubes (1.5 / 2 ml);Centrifuge Tubes (15 / 50 ml);Cryovials;Cover Slips;Test Tube Racks;Slide Storage Boxes;Staining Jars;Wash Bottles;Measuring Cylinders & Beakers;Reagent Bottles;Droppers;Culture Tubes',
-'hospital-consumables':'IV Cannula;IV Infusion Set;Foley Catheter;Urine Collection Bag;Surgical Face Mask;N95 Respirator;Disposable Gown / PPE Kit;Surgical Gloves (Sterile);Cotton Gauze & Swabs;Crepe Bandage;Surgical Blades;Disposable Cap & Shoe Cover;Micropore Tape;Oxygen Mask;Nebulizer Mask;ECG Electrodes'};
-const FROM={'test-kits':['test'],'lab-consumables':['lab','blood'],'hospital-consumables':['care']};
-const cnav=a=>CATS2.map(c=>'<a class="tab'+(c[0]===a?' on':'')+'" href="#/c/'+c[0]+'">'+c[2]+' '+c[1]+'</a>').join('');
-const ccard=(t,d,k,e,l)=>`<div class="pc" data-k="${k||''}" data-t="${t.toLowerCase()}"><div class="im ${k?'':'ph'} ${CT.includes(k)?'ct':''}">${k?'<img loading="lazy" alt="'+t+'" src="'+IMG[k]+'">':e}</div><div class="bd"><small>${l}</small><h3>${t}</h3><p>${d}</p><div class="qr"><button class="qb" data-d="-1" aria-label="Decrease">−</button><input class="qi" type="number" min="1" max="99999" value="1" aria-label="Quantity"><button class="qb" data-d="1" aria-label="Increase">+</button></div><button class="btn ad" data-t="${t}">📋 Add to Quote</button></div></div>`;
-function showCat(sl){const C=CATS2.find(x=>x[0]===sl)||CATS2[0];
-const it=(FROM[C[0]]?PR.filter(p=>FROM[C[0]].includes(p[1])).map(p=>ccard(p[0],p[2],p[3],C[2],C[1])):[]).concat(X[C[0]].split(';').map(n=>ccard(n,DEF,null,C[2],C[1])));
-const bg=C[4]?'url(images/'+C[4]+') center/cover':'linear-gradient(135deg,#0891b2,#2563eb,#7c3aed)';
-document.getElementById('cpc').innerHTML=`<div class="cban" style="background:linear-gradient(90deg,rgba(5,15,50,.85),rgba(5,15,50,.2)),${bg}"><div><h2>${C[2]} ${C[1]}</h2><p>${C[3]}</p><span class="cn">${it.length} products</span></div></div><div class="tabs">${cnav(C[0])}<a class="tab" href="#/products">All Products</a></div><div class="pbar"><input id="cq" placeholder="🔍 Search in ${C[1]}..."></div><div class="pg" id="cpg">${it.join('')}</div><p class="more">Can't find your brand or model? <a class="btn" href="#contact">Request Custom Sourcing</a></p>`;
-const g=document.getElementById('cpg');
-document.getElementById('cq').oninput=e=>{const q=e.target.value.toLowerCase();g.querySelectorAll('.pc').forEach(x=>x.classList.toggle('hide',!x.dataset.t.includes(q)))};
-g.addEventListener('click',e=>{if(e.target.tagName==='IMG'){lb.querySelector('img').src=e.target.src;lb.classList.add('on')}});
-document.title=C[1]+' | Edge Biogene'}
-document.getElementById('pcn').innerHTML=cnav('');
-const TT={home:'Edge Biogene | Laboratory & Medical Supplies Wholesale, Dehradun',about:'About Us | Edge Biogene',sourcing:'Brands & Sourcing | Edge Biogene',bulk:'Bulk & Custom Orders | Edge Biogene',industries:'Industries We Serve | Edge Biogene',contact:'Contact & Request a Quote | Edge Biogene',products:'All Products | Edge Biogene'};
-function route(){const h=location.hash,c=h.indexOf('#/c/')===0,pp=h==='#/products',R=document.documentElement.classList;R.toggle('pgmode',pp);R.toggle('cpmode',c);
-let k=c?'cat':pp?'products':h.replace('#','');if(!TT[k]&&k!=='cat')k='home';
-document.querySelectorAll('section[data-p]').forEach(x=>{x.hidden=x.dataset.p.split(' ').indexOf(k)<0});
-document.querySelectorAll('nav ul a').forEach(a=>{const t=a.getAttribute('href');a.classList.toggle('on',t==='#'+k||(t==='#/products'&&(pp||c)))});
-if(c)showCat(h.slice(4));else document.title=TT[k];
-document.body.classList.remove('pt');void document.body.offsetWidth;document.body.classList.add('pt');scrollTo({top:0,behavior:'instant'});if(k==='contact')updFq()}
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a&&a.getAttribute('href')===(location.hash||'#home')){e.preventDefault();route()}});
-addEventListener('hashchange',route);route();
-
-
+document.addEventListener('click',e=>{
+const i=e.target.closest('.pc .im img');if(i&&lb){lb.querySelector('img').src=i.src;lb.classList.add('on');track('view_product');return}
+if(lb&&e.target.closest('#lb')){lb.classList.remove('on');return}
+const a=e.target.closest('a[href]');if(a){const h=a.getAttribute('href');if(h.indexOf('tel:')===0)track('click_call');else if(h.indexOf('whatsapp.com')>-1||h.indexOf('wa.me')>-1)track('click_whatsapp')}
+if(e.target.closest('.ad'))track('quote_list_add')});
+const hsf=document.querySelector('form.hsrch');if(hsf)hsf.addEventListener('submit',()=>track('search'));
+// multi-line RFQ form
+(function(){const f=document.getElementById('f');if(!f)return;const pl=document.getElementById('pl'),UN=['pcs','box','pack','kit','set','bottle','other'];
+function row(n,q){const d=document.createElement('div');d.className='prow';d.innerHTML='<label class="fl"><input class="pn" placeholder=" " maxlength="120"><span>Product name *</span></label><label class="fl"><input class="pb" placeholder=" " maxlength="80"><span>Brand / model</span></label><label class="fl"><input class="pq" type="number" min="1" max="999999" placeholder=" "><span>Qty *</span></label><select class="pu" aria-label="Unit">'+UN.map(x=>'<option>'+x+'</option>').join('')+'</select><button type="button" class="rmv" aria-label="Remove product line">✕</button>';if(n)d.querySelector('.pn').value=n;if(q)d.querySelector('.pq').value=q;pl.appendChild(d)}
+let cart={};try{cart=JSON.parse(localStorage.getItem('eb_cart')||'{}')}catch(e){}
+const ks=Object.keys(cart).slice(0,20);if(ks.length){ks.forEach(k=>row(k,cart[k].q));const n=document.getElementById('fq');n.textContent='📋 '+ks.length+' item'+(ks.length>1?'s':'')+' from your quote list added below. You can edit them.';n.style.display='block'}else row();
+document.getElementById('addrow').onclick=()=>{if(pl.children.length<20)row();else alert('Maximum 20 product lines. Please send longer lists on WhatsApp.')};
+pl.addEventListener('click',e=>{if(e.target.classList.contains('rmv')&&pl.children.length>1)e.target.closest('.prow').remove()});
+document.getElementById('types').addEventListener('click',e=>{const b=e.target.closest('.ty');if(!b)return;document.querySelectorAll('#types .ty').forEach(x=>x.classList.toggle('on',x===b))});
+const sb=f.querySelector('button[type=submit]');let last='',lt=0;
+f.addEventListener('submit',e=>{e.preventDefault();const g=id=>document.getElementById(id).value.trim(),er=document.getElementById('ferr');
+const bad=m=>{er.textContent=m;er.style.display='block'};er.style.display='none';
+if(g('hp'))return;
+const ph=g('ph').replace(/[\s-]/g,'').replace(/^(\+91|91|0)/,'');
+if(!g('fb')||!g('fn'))return bad('Please enter your business name and your name.');
+if(!/^[6-9]\d{9}$/.test(ph))return bad('Please enter a valid 10-digit mobile number.');
+if(g('em')&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(g('em')))return bad('Please enter a valid email address.');
+if(!/^\d{6}$/.test(g('pin')))return bad('Please enter a 6-digit delivery PIN code.');
+const rows=[...pl.querySelectorAll('.prow')].map(r=>({n:r.querySelector('.pn').value.trim(),b:r.querySelector('.pb').value.trim(),q:+r.querySelector('.pq').value,u:r.querySelector('.pu').value}));
+if(rows.some(r=>!r.n||!(r.q>0)))return bad('Each product line needs a product name and a quantity.');
+if(!document.getElementById('cons').checked)return bad('Please tick the consent box so we can contact you about this quotation.');
+const ty=(document.querySelector('#types .ty.on')||{dataset:{v:''}}).dataset.v;
+const t='*Request for Quotation - Edge Biogene*\nEnquiry type: '+ty+'\nBusiness: '+g('fb')+'\nContact person: '+g('fn')+'\nPhone: +91'+ph+'\nEmail: '+(g('em')||'-')+'\nDelivery PIN: '+g('pin')+'\n\n*Products:*\n'+rows.map((r,i)=>(i+1)+'. '+r.n+(r.b?' ('+r.b+')':'')+' - '+r.q+' '+r.u).join('\n')+(g('fnote')?'\n\nNotes: '+g('fnote'):'');
+const dup=(t===last&&Date.now()-lt<60000);last=t;lt=Date.now();
+sb.disabled=true;setTimeout(()=>{sb.disabled=false},4000);
+const wl=document.getElementById('wl');wl.href='https://api.whatsapp.com/send?phone=917009350898&text='+encodeURIComponent(t);
+document.getElementById('ml').href='mailto:sales.edgebiogene@gmail.com?subject='+encodeURIComponent('Quotation request from '+g('fb'))+'&body='+encodeURIComponent(t);
+document.getElementById('st').classList.add('on');
+if(!dup){track('rfq_submit',{lines:rows.length});track('generate_lead');wl.click()}})})();
 (function(){
 const $=id=>document.getElementById(id);
 let cart={};try{cart=JSON.parse(localStorage.getItem('eb_cart')||'{}')}catch(e){}
@@ -157,3 +91,4 @@ n.querySelectorAll('ul a').forEach(a=>a.addEventListener('click',()=>set(false))
 document.addEventListener('click',e=>{if(!n.contains(e.target))set(false)});
 addEventListener('resize',()=>{if(innerWidth>820)set(false)});
 })();
+
